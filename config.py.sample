@@ -1,0 +1,14 @@
+SECRET_KEY = 'xjC5+RUjS8vomUJ4h6kdOzvgYcivAYdBZ8K4dvK/A5HvF'
+CAS_SERVER = 'https://casserver.domain.tld'
+CAS_LOGIN_ROUTE = '/cas-uri/login'
+CAS_LOGOUT_ROUTE = '/cas-uri/logout'
+CAS_VALIDATE_ROUTE = '/cas-uri/serviceValidate'
+CAS_AFTER_LOGIN = 'main'
+DEBUG = False
+DB_FILE = '/path/to/data.db'
+VENV_PATH = '/path/to/virtualenv'
+MAIL_SMTP_SERVER = 'smtp.domain.tld'
+MAIL_FROM = 'Your Name <mailaddress@domain.tld>'
+MAIL_TO = [ 'Your Friend <mailaddress@domain.tld>', 'Your Rescue Friend <mailaddress@domain.tld>' ]
+MAIL_SUBJECT = 'Mail title'
+MAIL_MESSAGE_PATH = '/path/to/code/doc/mail-content.txt'

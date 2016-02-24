@@ -1,0 +1,4 @@
+Flask==0.10.1
+Flask-CAS==1.0.1
+pickleDB==0.4
+simplejson==3.8.2
