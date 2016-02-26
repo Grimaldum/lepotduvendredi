@@ -21,7 +21,7 @@ db = pickledb.load(config.DB_FILE, False)
 @login_required
 def main():
     return render_template('index.html',
-        username = cas.username,
+        username = _get_username_clean(),
 	is_coming = db.get(cas.username),
         count = len(db.getall())
     )
@@ -32,7 +32,7 @@ def coming():
     db.set(cas.username, True)
     db.dump()  
     return render_template('index.html',
-        username = cas.username,
+        username = _get_username_clean(),
 	is_coming = db.get(cas.username),
         count = len(db.getall())
     )
@@ -44,10 +44,23 @@ def notcoming():
         db.rem(cas.username)
         db.dump()  
     return render_template('index.html',
-        username = cas.username,
+        username = _get_username_clean(),
 	is_coming = db.get(cas.username),
         count = len(db.getall())
     )
+
+def _get_username_clean():
+    username = cas.username
+    first_name = username.split('.')[0]
+    first_name = first_name[0].upper() + first_name[1:]
+    if len(username.split('.')) > 1:
+        last_name = username.split('.')[1]
+        last_name = last_name[0].upper() + last_name[1:]
+        return first_name + ' ' +last_name
+    else:
+        return first_name
+
+
 
 if __name__ == "__main__":
     app.run()
