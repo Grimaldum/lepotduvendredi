@@ -52,7 +52,12 @@ def notcoming():
 def _get_username_clean():
     username = cas.username
     first_name = username.split('.')[0]
+    if(first_name == 'annesophie'){
+    	first_name = 'Anne-Sophie'
+    }
+    else {
     first_name = first_name[0].upper() + first_name[1:]
+    }
     if len(username.split('.')) > 1:
         last_name = username.split('.')[1]
         last_name = last_name[0].upper() + last_name[1:]
