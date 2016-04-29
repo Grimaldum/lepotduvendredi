@@ -5,7 +5,17 @@ from email.MIMEText import MIMEText
 from email.MIMEImage import MIMEImage
 import urllib, json, random
 
-giphyurl = "http://api.giphy.com/v1/gifs/search?q=beer+drink+party&api_key=dc6zaTOxFJmzC&limit=500"
+giphyurl = GIPHYURLBEG
+giphykws = ""
+
+for kw in GIPHYKEYWORDS:
+  giphykws += kw
+  giphykws += "+"
+
+giphykws[:-1]
+giphyurl += giphykws
+giphyurl += GIPHYURLEND
+
 response = urllib.urlopen(giphyurl)
 giphydata = json.loads(response.read())
 giftotal = len(giphydata['data'])
