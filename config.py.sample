@@ -12,3 +12,7 @@ MAIL_FROM = 'Your Name <mailaddress@domain.tld>'
 MAIL_TO = [ 'Your Friend <mailaddress@domain.tld>', 'Your Rescue Friend <mailaddress@domain.tld>' ]
 MAIL_SUBJECT = 'Mail title'
 MAIL_MESSAGE_PATH = '/path/to/code/doc/mail-content.txt'
+
+GIPHYURLBEG = "http://api.giphy.com/v1/gifs/search?q="
+GIPHYURLEND = "&api_key=dc6zaTOxFJmzC&limit=500"
+GIPHYKEYWORDS = ['beer',]
