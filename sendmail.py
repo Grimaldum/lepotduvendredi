@@ -5,16 +5,16 @@ from email.MIMEText import MIMEText
 from email.MIMEImage import MIMEImage
 import urllib, json, random
 
-giphyurl = GIPHYURLBEG
+giphyurl = config.GIPHYURLBEG
 giphykws = ""
 
-for kw in GIPHYKEYWORDS:
+for kw in config.GIPHYKEYWORDS:
   giphykws += kw
   giphykws += "+"
 
 giphykws[:-1]
 giphyurl += giphykws
-giphyurl += GIPHYURLEND
+giphyurl += config.GIPHYURLEND
 
 response = urllib.urlopen(giphyurl)
 giphydata = json.loads(response.read())
